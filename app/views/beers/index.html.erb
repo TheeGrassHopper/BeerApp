@@ -1,0 +1,9 @@
+<% @beers.each do |beer| %>
+<p>
+<strong>name:</strong> <%= beer.name %>
+<strong>Brewer:</strong> <%= beer.brewer %>
+<strong>beer_type:</strong> <%= beer.beer_type %>
+<strong>ABV:</strong> <%= beer.abv %>
+</p>
+<% end %>
+<h1> <%= @beers.inspect %></h1>
