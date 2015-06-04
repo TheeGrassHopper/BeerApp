@@ -1,25 +1,29 @@
-<%= @beer.inspect %>
+<!-- <p id="notice"><%= @beer.inspect %></p> -->
 
-<p id="notice"><%= notice %></p>
+	<p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Brewer:</strong>
-  <%= @beer.brewer %>
+	<strong>Brewer:</strong>
+	<%= @beer.brewer %>
 </p>
 
 <p>
-  <strong>name:</strong>
-  <%= @beer.name %>
+	<strong>name:</strong>
+	<%= @beer.name %>
 </p>
 
 <p>
-  <strong>beer_type:</strong>
-  <%= @beer.beer_type %>
+	<strong>beer_type:</strong>
+	<%= @beer.beer_type %>
 </p>
-
-<strong>abv:</strong>
-  <%= @beer.abv %>
+<p>
+	<strong>abv:</strong>
+	<%= @beer.abv %>
+</p>
+<p>
+	<strong>User:</strong>
+	<%= @user_id %>
 </p>
 
 <%= link_to 'Edit', edit_beer_path(@beer) %> |
-<%= link_to 'Back', beers_path %>
+<%= link_to 'Show List', beers_path %> | 

@@ -6,6 +6,7 @@ class BeersController < ApplicationController
 #  show data for one beer
 	def show
 		@beer = Beer.find(params[:id])
+
 	end
 #  Displays from for creating a new beet
 	def new
@@ -17,8 +18,8 @@ class BeersController < ApplicationController
 	end
 #  processes data from the new beer from and create a beer
 	def create
-    @beer = Beer.new(beer_params)
-
+    @beer = Beer.new(beer_params.merge(:user_id => @current_user.id))
+    
     respond_to do |format|
       if @beer.save
         format.html { redirect_to @beer, notice: 'beer was successfully created.' }
@@ -59,6 +60,6 @@ class BeersController < ApplicationController
 
     # Never trust parameters from the scary Internet, only allow the white list through.
     def beer_params
-      params.require(:beer).permit(:brewer, :name, :beer_type, :abv)
+      params.require(:beer).permit(:brewer, :name, :beer_type, :abv, :user_id)
     end
 end
